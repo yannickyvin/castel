@@ -30,6 +30,8 @@ export default function Home() {
         </div>
         <TopOfPage h1="Bienvenue sur CastelFurets !" h2="Le site d'une amatrice amoureuse des furets" p="Venez découvrir l'objet de ma passion" image="P1013943-Grand.jpg"/>
         <Cards />
+        <h2>Mais pourquoi Castel furets ?</h2>
+        <p>En référence à la petite cité de caractère de Châteaugiron en Ille et Vilaine (35) où nous habitons et qui fait de nous des castelgironnais et de nos furets des castelfurets. D'ailleurs, si vous en avez l'occasion, n'hésitez pas à venir visiter la ville et le magnifique château médiéval qui trône en plein centre.</p>
         <Map />
       </main>
 
@@ -86,8 +88,8 @@ const Cards = () => {
         description={"A découvrir dans « Généralités », toutes les informations pratiques sur le furet, son histoire, sa morphologie, son alimentation, son habitat, etc… Le passage incontournable si vous ne connaissez pas encore bien les furets."}/>
       <Card img={"sparrow_grass.JPG"} titre={"Les furets du Castel"} 
         description={"« Les furets du Castel » se focalise sur la vie de nos deux petits poilus, Sparrow et Pearl, en photos en en vidéos, leur petit nid et peut-être un jour leur descendance…"}/>
-      <Card img={"sparrow_salon.JPG"} titre={"Revues"} 
-        description={"Notre revue de livres vous permettra de vous y retrouver dans la littérature pour furets."}/>
+      <Card img={"sparrow_salon.JPG"} titre={"Références documentaires"} 
+        description={"Référencement de quelques livres, sites internet et réseaux sociaux sur le sujet"}/>
       <Card img={"sparrow_curieux.JPG"} titre={"Forum"} 
         description="Le « Forum » est un espace d’échange pour s’apporter des conseils mutuels, poster les photos de vos bébés ou se filer de bons tuyaux…" />
     </div>
