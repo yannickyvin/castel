@@ -24,7 +24,7 @@ const Header = () => {
         <div className={styles['content-links'] + ' ' + (showMenu ? styles['active'] : '')}>
           <ul>
             <li><a className="link" href="/">Accueil</a></li>
-            <li><a className="link" href="/elevage">Elevage</a></li>
+            <li><a className="link" href="/generalites">Généralités</a></li>
             <li>Guides</li>
             <li>Furets</li>
             <li>Forum</li>

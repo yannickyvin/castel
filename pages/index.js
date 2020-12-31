@@ -97,7 +97,7 @@ const Cards = () => {
 const Card = (props) => {
   return (
     <div className={styles['card__content']}>
-      <a href="/elevage">
+      <a href="/generalites">
         <div className={styles['card__content-media']}>
           <img src={props.img}></img>
           <div className={styles['card__content-media-badge']}>
