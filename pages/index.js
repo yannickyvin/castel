@@ -28,7 +28,7 @@ export default function Home() {
       <main className={styles['main-content']}>
         <div className={styles.diapo}>
         </div>
-        <TopOfPage h1="Bienvenue sur CastelFurets !" h2="Conseils, guides, forum sur les furets" image="P1013943-Grand.jpg"/>
+        <TopOfPage h1="Bienvenue sur CastelFurets !" h2="Le site d'une amatrice amoureuse des furets" p="Venez découvrir l'objet de ma passion" image="P1013943-Grand.jpg"/>
         <Cards />
         <Map />
       </main>
@@ -84,7 +84,7 @@ const Cards = () => {
     <div className={styles['cards__content']}>
       <Card img={"pearl_home.jfif"} titre={"Généralités"} 
         description={"A découvrir dans « Généralités », toutes les informations pratiques sur le furet, son histoire, sa morphologie, son alimentation, son habitat, etc… Le passage incontournable si vous ne connaissez pas encore bien les furets."}/>
-      <Card img={"sparrow_grass.JPG"} titre={"Nos furets"} 
+      <Card img={"sparrow_grass.JPG"} titre={"Les furets du Castel"} 
         description={"« Les furets du Castel » se focalise sur la vie de nos deux petits poilus, Sparrow et Pearl, en photos en en vidéos, leur petit nid et peut-être un jour leur descendance…"}/>
       <Card img={"sparrow_salon.JPG"} titre={"Revues"} 
         description={"Notre revue de livres vous permettra de vous y retrouver dans la littérature pour furets."}/>
