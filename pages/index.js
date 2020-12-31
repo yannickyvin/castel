@@ -1,206 +1,55 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import TopOfPage from '../components/TopOfPage'
+import styles from './home.module.scss'
+
+import dynamic from 'next/dynamic'
+
+const SliderNoSSR = dynamic(
+  () => import('../components/Slider'),
+  { ssr: false }
+)
+
+const SpiderNoSSR = dynamic(
+  () => import('../components/Splider'),
+  { ssr: false }
+)
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Castel Furets</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header/>
 
-      <main>
-        <h1 className="title">
-          Bienvenue sur CastelFuret !
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <main className={styles['main-content']}>
+        <div className={styles.diapo}>
         </div>
+        <TopOfPage h1="Bienvenue sur CastelFurets !" h2="Conseils, guides, forum sur les furets" image="P1013943-Grand.jpg"/>
+        <Cards />
+        <Map />
       </main>
 
-      <footer>
+      <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          Site créé par {' '}
+          <img src="/logo-150x150.png" alt="Castel furet Logo" className={styles.logo} />
         </a>
       </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
 
       <style jsx global>{`
         html,
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+          font-family: Arial;
         }
 
         * {
@@ -210,3 +59,62 @@ export default function Home() {
     </div>
   )
 }
+
+const Map = () => {
+  return (
+    <div className={styles['map__content']}>
+      <div className={styles['map__body']}>
+        <div className={styles['map__body-img']}>
+          <img className={styles['map__image']} src="chateaugiron.png"></img>
+        </div>
+        <div className={styles['map__body-description']}>
+          <p>
+            Nos furets habitent à Châteaugiron, petite cité de caractère.
+          </p>
+          <SpiderNoSSR />
+          <div className={styles['map__body-description-triangle']} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const Cards = () => {
+  return (
+    <div className={styles['cards__content']}>
+      <Card img={"pearl_home.jfif"} titre={"Généralités"} 
+        description={"A découvrir dans « Généralités », toutes les informations pratiques sur le furet, son histoire, sa morphologie, son alimentation, son habitat, etc… Le passage incontournable si vous ne connaissez pas encore bien les furets."}/>
+      <Card img={"sparrow_grass.JPG"} titre={"Nos furets"} 
+        description={"« Les furets du Castel » se focalise sur la vie de nos deux petits poilus, Sparrow et Pearl, en photos en en vidéos, leur petit nid et peut-être un jour leur descendance…"}/>
+      <Card img={"sparrow_salon.JPG"} titre={"Revues"} 
+        description={"Notre revue de livres vous permettra de vous y retrouver dans la littérature pour furets."}/>
+      <Card img={"sparrow_curieux.JPG"} titre={"Forum"} 
+        description="Le « Forum » est un espace d’échange pour s’apporter des conseils mutuels, poster les photos de vos bébés ou se filer de bons tuyaux…" />
+    </div>
+  )
+}
+
+const Card = (props) => {
+  return (
+    <div className={styles['card__content']}>
+      <a href="/elevage">
+        <div className={styles['card__content-media']}>
+          <img src={props.img}></img>
+          <div className={styles['card__content-media-badge']}>
+            <img src={props.img}></img>
+          </div>
+        </div>
+
+        <div className={styles['card__content-body']}>
+          <h3>{props.titre}</h3>
+          <p>{props.description}</p>
+        </div>
+
+        <div className={styles['card__content-footer']}>
+          <div className={styles["card__content-footer-cta"]}>Voir Plus</div>
+        </div>
+      </a>
+    </div>
+  )
+}
+

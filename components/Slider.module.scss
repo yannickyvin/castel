@@ -1,0 +1,55 @@
+.slides {
+  max-width: 1200px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  background-color: red;
+
+  img {
+    width:100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.image {
+  width: 100%;
+}
+
+.active {
+  display: block;
+  background-color: black;
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 1px 10px #4d4751, 0 0 4px #4d4751;
+  letter-spacing: .05em;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  0%   {opacity: .4;}
+  50%  {opacity: 1}
+  100% {opacity: .7}
+}
