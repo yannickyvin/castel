@@ -9,6 +9,7 @@ const TopOfPage = (params) => {
       <div className={styles['top-description']}>
         <h1>{params.h1}</h1>
         <h2>{params.h2}</h2>
+        <p>{params.p}</p>
       </div>
     </div>
   )
