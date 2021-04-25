@@ -25,7 +25,7 @@ h1 {
 
 
 .main-content {
-  flex: 1;
+  max-width: $base-width;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,9 +40,6 @@ h1 {
   position: relative;
   width: 100%;
   height: 300px;
-}
-
-.home-top__blockimg {
 }
 
 .home-top__image {
@@ -68,6 +65,42 @@ h1 {
     text-shadow: 0 1px 10px #4d4751, 0 0 4px #4d4751;
     letter-spacing: .05em;
   }
+}
+
+.location__content {
+  max-width: $base-width;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.location__description {
+  width: 50%;
+  height: 300px;
+  padding: 1em;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2)), url('/chateau-chateaugiron.jpg');
+  text-shadow: 0 1px 10px #fff, 0 0 1px #fff;
+  font-weight: 1.2;
+}
+
+.location__description__texte {
+  padding: 2em;
+  background-color:rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: auto;
+}
+
+.location__map {
+  width: 50%;
+  height: 300px;
+}
+
+.map__img {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
 }
 
 .footer {
@@ -96,66 +129,7 @@ h1 {
 }
 
 .map__content {
-  max-width: $base-width;
-  width: 100%;
-  height: 400px;
-  margin-top: 1em;
-  padding-left: 30px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-}
-
-.map__body {
-  position: relative;
-  max-width: $base-width;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background-color:#8EB6F8;
-}
-
-.map__body-img, .map__body-description {
-  max-width: calc(100% - $base-width);
-  width: 100%;
-}
-
-.map__body-img {
-  display: flex;
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.map__image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: left;
-}
-
-.map__body-description {
-  position: absolute;
-  width: 500px;
-  padding: 0 50px 30px 50px;
-  top: 100px;
-  left: 160px;
-  background-color: $color-map-right;
-  line-height: 1.2;
-  color: #fff;
-  text-shadow: 0 1px 10px #000, 0 0 4px #4d4751;
-  letter-spacing: .05em;
-}
-
-.map__body-description-triangle {
-  position: absolute;
-  width: 0; 
-  height: 0; 
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;   
-  border-left:20px solid $color-map-right; 
-  
-  right: -20px;
-  top: 140px;  
+ 
 }
 
 .cards__content {
@@ -170,9 +144,9 @@ h1 {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  max-width: 600px;
   width: 50%;
   margin: 2em 0;
-  padding-left: 2em;
 
   a {
     color: inherit;
@@ -274,47 +248,12 @@ h1 {
     height: auto;
     justify-content: center;
   }
-  
-  .map__left, .map__right {
-    display: none;
-  }
-  
-  .map__body {
-    max-width: $base-width;
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  
-  .map__body-img, .map__body-description {
-    width: 100%;
-  }
-  
-  .map__body-img {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-  }
-  
+    
   .map__image {
     height: 400px;
     width: 100%;
     object-fit: cover;
     object-position: right center;
-  }
-  
-  .map__body-description {
-    position: inherit;
-    height: 400px;
-    background-color: $color-map-right;
-    line-height: 1.2;
-    color: #fff;
-    text-shadow: 0 1px 10px #000, 0 0 4px #4d4751;
-    letter-spacing: .05em;
-  }
-  
-  .map__body-description-triangle {
-    display: none; 
   }
 
   .card__content {

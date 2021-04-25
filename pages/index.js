@@ -30,9 +30,7 @@ export default function Home() {
         </div>
         <TopOfPage h1="Bienvenue sur CastelFurets !" h2="Le site d'une amatrice amoureuse des furets" p="Venez découvrir l'objet de ma passion" image="P1013943-Grand.jpg"/>
         <Cards />
-        <h2>Mais pourquoi Castel furets ?</h2>
-        <p>En référence à la petite cité de caractère de Châteaugiron en Ille et Vilaine (35) où nous habitons et qui fait de nous des castelgironnais et de nos furets des castelfurets. D'ailleurs, si vous en avez l'occasion, n'hésitez pas à venir visiter la ville et le magnifique château médiéval qui trône en plein centre.</p>
-        <Map />
+        <LocationZone />
       </main>
 
       <footer className={styles.footer}>
@@ -65,18 +63,7 @@ export default function Home() {
 const Map = () => {
   return (
     <div className={styles['map__content']}>
-      <div className={styles['map__body']}>
-        <div className={styles['map__body-img']}>
-          <img className={styles['map__image']} src="chateaugiron.png"></img>
-        </div>
-        <div className={styles['map__body-description']}>
-          <p>
-            Nos furets habitent à Châteaugiron, petite cité de caractère.
-          </p>
-          <SpiderNoSSR />
-          <div className={styles['map__body-description-triangle']} />
-        </div>
-      </div>
+        <img className={styles['map__img']} src="chateaugiron.jpg"></img>
     </div>
   )
 }
@@ -116,6 +103,29 @@ const Card = (props) => {
           <div className={styles["card__content-footer-cta"]}>Voir Plus</div>
         </div>
       </a>
+    </div>
+  )
+}
+
+const LocationZone = () => {
+  return(
+    <div>
+      <h2>Mais pourquoi Castel furets ?</h2>
+      <div className={styles['location__content']}>
+        <div className={styles['location__description']}>
+          <div className={styles['location__description__texte']}>
+            <p>
+              En référence à la petite cité de caractère de Châteaugiron en Ille et Vilaine (35) où nous habitons et qui fait de nous des castelgironnais et de nos furets des castelfurets. 
+            </p>
+            <p>
+              D'ailleurs, si vous en avez l'occasion, n'hésitez pas à venir visiter la ville et le magnifique château médiéval qui trône en plein centre.
+            </p>
+          </div>
+        </div>
+        <div className={styles['location__map']}>
+          <Map />
+        </div>
+      </div>
     </div>
   )
 }
